@@ -47,6 +47,7 @@ class _CreateAccountState extends State<CreateAccount> {
                     child: Text(
                       "Welcome",
                       style: TextStyle(
+                        color: Colors.white,
                         fontSize: 34,
                         fontWeight: FontWeight.bold,
                       ),
@@ -128,7 +129,7 @@ class _CreateAccountState extends State<CreateAccount> {
               });
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => HomeScreen()));
-              print("Account Created Sucessfull");
+              print("Account Created Sucessfully");
             } else {
               print("Login Failed");
               setState(() {
@@ -165,9 +166,13 @@ class _CreateAccountState extends State<CreateAccount> {
       height: size.height / 14,
       width: size.width / 1.1,
       child: TextField(
+        style: TextStyle(color: Colors.white),
         controller: cont,
         decoration: InputDecoration(
-          prefixIcon: Icon(icon),
+          prefixIcon: Icon(
+            icon,
+            color: Colors.lightBlue[700],
+          ),
           hintText: hintText,
           hintStyle: TextStyle(color: Colors.grey),
           border: OutlineInputBorder(
