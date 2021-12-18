@@ -141,8 +141,10 @@ class _AddMembersInGroupState extends State<AddMembersInGroup> {
                   style: TextStyle(color: Colors.white),
                   controller: _search,
                   decoration: InputDecoration(
+
                     hintText: "Search a user's email",
                     hintStyle: TextStyle(color: Colors.grey),
+
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
