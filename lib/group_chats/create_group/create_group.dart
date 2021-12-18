@@ -82,9 +82,11 @@ class _CreateGroupState extends State<CreateGroup> {
                     height: size.height / 14,
                     width: size.width / 1.15,
                     child: TextField(
+                      style: TextStyle(color: Colors.white),
                       controller: _groupName,
                       decoration: InputDecoration(
-                        hintText: "Enter Group Name",
+                        hintText: "Enter Group's Name",
+                        hintStyle: TextStyle(color: Colors.grey),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),

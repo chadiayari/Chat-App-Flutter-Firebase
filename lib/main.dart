@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: new ThemeData(scaffoldBackgroundColor: const Color(0xff000000)),
       home: LoginScreen(),
     );
   }

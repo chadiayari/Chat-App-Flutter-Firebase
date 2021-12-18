@@ -110,10 +110,19 @@ class _AddMembersInGroupState extends State<AddMembersInGroup> {
                 itemBuilder: (context, index) {
                   return ListTile(
                     onTap: () => onRemoveMembers(index),
-                    leading: Icon(Icons.account_circle),
-                    title: Text(membersList[index]['name']),
-                    subtitle: Text(membersList[index]['email']),
-                    trailing: Icon(Icons.close),
+                    leading: Icon(
+                      Icons.account_circle,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      membersList[index]['name'],
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    subtitle: Text(
+                      membersList[index]['email'],
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    trailing: Icon(Icons.close, color: Colors.white),
                   );
                 },
               ),
@@ -129,9 +138,13 @@ class _AddMembersInGroupState extends State<AddMembersInGroup> {
                 height: size.height / 14,
                 width: size.width / 1.15,
                 child: TextField(
+                  style: TextStyle(color: Colors.white),
                   controller: _search,
                   decoration: InputDecoration(
-                    hintText: "Search For New Member",
+
+                    hintText: "Search a user's email",
+                    hintStyle: TextStyle(color: Colors.grey),
+
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -156,10 +169,19 @@ class _AddMembersInGroupState extends State<AddMembersInGroup> {
             userMap != null
                 ? ListTile(
                     onTap: onResultTap,
-                    leading: Icon(Icons.account_box),
-                    title: Text(userMap!['name']),
-                    subtitle: Text(userMap!['email']),
-                    trailing: Icon(Icons.add),
+                    leading: Icon(Icons.account_box, color: Colors.white),
+                    title: Text(
+                      userMap!['name'],
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    subtitle: Text(
+                      userMap!['email'],
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    trailing: Icon(
+                      Icons.add,
+                      color: Colors.white,
+                    ),
                   )
                 : SizedBox(),
           ],

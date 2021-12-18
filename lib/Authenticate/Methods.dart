@@ -23,7 +23,7 @@ Future<User?> createAccount(String name, String email, String password) async {
     UserCredential userCrendetial = await _auth.createUserWithEmailAndPassword(
         email: email, password: password);
 
-    print("Account created Succesfull");
+    print("Account created Succesfully");
 
     userCrendetial.user!.updateDisplayName(name);
     

@@ -98,19 +98,34 @@ class GroupChatRoom extends StatelessWidget {
                       width: size.width / 1.3,
                       child: TextField(
                         controller: _message,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),
                         decoration: InputDecoration(
+                            fillColor: Colors.white,
                             suffixIcon: IconButton(
                               onPressed: () {},
-                              icon: Icon(Icons.photo),
+                              icon: Icon(
+                                Icons.photo,
+                                color: Colors.white,
+                              ),
                             ),
-                            hintText: "Send Message",
+                            hintText: "Send a message",
+                            hintStyle: TextStyle(
+                              color: Colors.grey,
+                            ),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                             )),
                       ),
                     ),
                     IconButton(
-                        icon: Icon(Icons.send), onPressed: onSendMessage),
+                        icon: Icon(
+                          Icons.send,
+                          color: Colors.white,
+                        ),
+                        onPressed: onSendMessage),
                   ],
                 ),
               ),
