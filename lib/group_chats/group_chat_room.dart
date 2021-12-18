@@ -97,9 +97,9 @@ class GroupChatRoom extends StatelessWidget {
                       height: size.height / 17,
                       width: size.width / 1.3,
                       decoration: BoxDecoration(
-    border: Border.all(color: Colors.blueAccent),
-    borderRadius: BorderRadius.circular(10),
-  ),
+                        border: Border.all(color: Colors.blueAccent),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                       child: TextField(
                         controller: _message,
                         style: TextStyle(
@@ -145,7 +145,6 @@ class GroupChatRoom extends StatelessWidget {
       if (chatMap['type'] == "text") {
         return Container(
           width: size.width,
-          
           alignment: chatMap['sendBy'] == _auth.currentUser!.displayName
               ? Alignment.centerRight
               : Alignment.centerLeft,
@@ -199,7 +198,6 @@ class GroupChatRoom extends StatelessWidget {
         return Container(
           width: size.width,
           alignment: Alignment.center,
-          
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
             margin: EdgeInsets.symmetric(vertical: 5, horizontal: 8),

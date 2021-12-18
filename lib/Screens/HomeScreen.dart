@@ -131,9 +131,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                     height: size.height / 14,
                     width: size.width / 1.15,
                     decoration: BoxDecoration(
-    border: Border.all(color: Colors.blueAccent),
-    borderRadius: BorderRadius.circular(10),
-  ),
+                      border: Border.all(color: Colors.blueAccent),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     child: TextField(
                       style: TextStyle(
                         fontWeight: FontWeight.w500,

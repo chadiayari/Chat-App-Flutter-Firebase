@@ -68,7 +68,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   Container(
                     width: size.width,
                     alignment: Alignment.center,
-                    
                     child: field(size, "email", Icons.account_box, _email),
                   ),
                   Padding(
@@ -156,9 +155,9 @@ class _LoginScreenState extends State<LoginScreen> {
       height: size.height / 14,
       width: size.width / 1.1,
       decoration: BoxDecoration(
-    border: Border.all(color: Colors.blueAccent),
-    borderRadius: BorderRadius.circular(10),
-  ),
+        border: Border.all(color: Colors.blueAccent),
+        borderRadius: BorderRadius.circular(10),
+      ),
       child: TextField(
         style: TextStyle(color: Colors.white),
         controller: cont,
@@ -171,7 +170,6 @@ class _LoginScreenState extends State<LoginScreen> {
           hintText: hintText,
           iconColor: Colors.white,
           hintStyle: TextStyle(color: Colors.grey),
-          
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
