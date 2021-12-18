@@ -156,10 +156,6 @@ class ChatRoom extends StatelessWidget {
               height: size.height / 10,
               width: size.width,
               alignment: Alignment.center,
-              decoration: BoxDecoration(
-    border: Border.all(color: Colors.blueAccent),
-    borderRadius: BorderRadius.circular(10),
-  ),
               child: Container(
                 height: size.height / 12,
                 width: size.width / 1.1,
@@ -169,6 +165,10 @@ class ChatRoom extends StatelessWidget {
                     Container(
                       height: size.height / 17,
                       width: size.width / 1.3,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.blueAccent),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                       child: TextField(
                         style: TextStyle(color: Colors.white),
                         controller: _message,
@@ -208,9 +208,9 @@ class ChatRoom extends StatelessWidget {
         ? Container(
             width: size.width,
             decoration: BoxDecoration(
-    border: Border.all(color: Colors.blueAccent),
-    borderRadius: BorderRadius.circular(10),
-  ),
+              border: Border.all(color: Colors.blueAccent),
+              borderRadius: BorderRadius.circular(10),
+            ),
             alignment: map['sendby'] == _auth.currentUser!.displayName
                 ? Alignment.centerRight
                 : Alignment.centerLeft,
