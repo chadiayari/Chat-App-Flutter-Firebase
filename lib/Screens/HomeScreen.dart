@@ -4,6 +4,7 @@ import 'package:chat_app/group_chats/group_chat_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -12,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   Map<String, dynamic>? userMap;
+  List<dynamic>? usersList;
   bool isLoading = false;
   final TextEditingController _search = TextEditingController();
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -19,9 +21,43 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
   @override
   void initState() {
+
+
+    Fluttertoast.showToast(
+        msg: "Fetching Users",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.TOP_RIGHT,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.grey,
+        textColor: Colors.black,
+        fontSize: 16.0
+    );
+
+    this.getUsers();
+
     super.initState();
     WidgetsBinding.instance!.addObserver(this);
     setStatus("Online");
+  }
+
+  void getUsers() async {
+    FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+    setState(() {
+      isLoading = true;
+    });
+    print("####### Getting Users #########");
+    await _firestore
+        .collection('users')
+        .get()
+        .then((value) {
+
+      setState(() {
+        userMap = value.docs[1].data();;
+        isLoading = false;
+      });
+      
+    });
   }
 
   void setStatus(String status) async {
@@ -104,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                     child: TextField(
                       controller: _search,
                       decoration: InputDecoration(
-                        hintText: "Search",
+                        hintText: "Search For People To Chat With",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -117,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                 ),
                 ElevatedButton(
                   onPressed: onSearch,
-                  child: Text("Search"),
+                  child: Text("Search By Email"),
                 ),
                 SizedBox(
                   height: size.height / 30,
@@ -150,7 +186,34 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                         subtitle: Text(userMap!['email']),
                         trailing: Icon(Icons.chat, color: Colors.black),
                       )
-                    : Container(),
+                    : 
+                    // Scaffold(
+                    //   floatingActionButton: null,
+                    //   body: StreamBuilder(
+                    //     stream: _firestore.collection('users').snapshots(),
+                    //     builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
+                    //       if(!snapshot.hasData){
+                    //         return Center(
+                    //           child:CircularProgressIndicator()
+                    //         );
+                    //       }
+
+                    //       return ListView(
+                    //         children: snapshot.data.docs.map( (document)  {
+                    //           return Center(
+                    //             child: Container(
+                    //               width : MediaQuery.of(context).size.width / 1.2,
+                    //               height : MediaQuery.of(context).size.height / 6,
+                    //               child: Text('Some user'),
+                    //             ),
+                    //           );
+                    //         }),
+                    //       );
+                    //     },
+                    //   ),
+                    
+                    // ),
+                    Container()
               ],
             ),
       floatingActionButton: FloatingActionButton(
