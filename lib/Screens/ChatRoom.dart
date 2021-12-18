@@ -156,6 +156,10 @@ class ChatRoom extends StatelessWidget {
               height: size.height / 10,
               width: size.width,
               alignment: Alignment.center,
+              decoration: BoxDecoration(
+    border: Border.all(color: Colors.blueAccent),
+    borderRadius: BorderRadius.circular(10),
+  ),
               child: Container(
                 height: size.height / 12,
                 width: size.width / 1.1,
@@ -194,6 +198,10 @@ class ChatRoom extends StatelessWidget {
     return map['type'] == "text"
         ? Container(
             width: size.width,
+            decoration: BoxDecoration(
+    border: Border.all(color: Colors.blueAccent),
+    borderRadius: BorderRadius.circular(10),
+  ),
             alignment: map['sendby'] == _auth.currentUser!.displayName
                 ? Alignment.centerRight
                 : Alignment.centerLeft,
