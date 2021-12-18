@@ -21,17 +21,14 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
   @override
   void initState() {
-
-
     Fluttertoast.showToast(
         msg: "Fetching Users",
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.TOP_RIGHT,
         timeInSecForIosWeb: 1,
-        backgroundColor: Colors.grey,
-        textColor: Colors.black,
-        fontSize: 16.0
-    );
+        backgroundColor: Colors.white,
+        textColor: Colors.grey,
+        fontSize: 16.0);
 
     this.getUsers();
 
@@ -47,16 +44,12 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       isLoading = true;
     });
     print("####### Getting Users #########");
-    await _firestore
-        .collection('users')
-        .get()
-        .then((value) {
-
+    await _firestore.collection('users').get().then((value) {
       setState(() {
-        userMap = value.docs[1].data();;
+        userMap = value.docs[1].data();
+        ;
         isLoading = false;
       });
-      
     });
   }
 
@@ -144,13 +137,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                       ),
                       controller: _search,
                       decoration: InputDecoration(
-
                         fillColor: Colors.white,
                         hintText: "Search for users",
                         hintStyle: TextStyle(
                           color: Colors.grey,
                         ),
-
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -199,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                         ),
                         trailing: Icon(Icons.chat, color: Colors.white),
                       )
-                    : 
+                    :
                     // Scaffold(
                     //   floatingActionButton: null,
                     //   body: StreamBuilder(
@@ -224,7 +215,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                     //       );
                     //     },
                     //   ),
-                    
+
                     // ),
                     Container()
               ],

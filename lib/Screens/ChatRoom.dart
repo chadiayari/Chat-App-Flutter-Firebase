@@ -166,20 +166,29 @@ class ChatRoom extends StatelessWidget {
                       height: size.height / 17,
                       width: size.width / 1.3,
                       child: TextField(
+                        style: TextStyle(color: Colors.white),
                         controller: _message,
                         decoration: InputDecoration(
                             suffixIcon: IconButton(
                               onPressed: () => getImage(),
-                              icon: Icon(Icons.photo),
+                              icon: Icon(
+                                Icons.photo,
+                                color: Colors.white,
+                              ),
                             ),
                             hintText: "Send a message",
+                            hintStyle: TextStyle(color: Colors.white),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                             )),
                       ),
                     ),
                     IconButton(
-                        icon: Icon(Icons.send), onPressed: onSendMessage),
+                        icon: Icon(
+                          Icons.send,
+                          color: Colors.white,
+                        ),
+                        onPressed: onSendMessage),
                   ],
                 ),
               ),
