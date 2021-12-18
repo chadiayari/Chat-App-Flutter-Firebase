@@ -46,9 +46,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Text(
                       "Welcome",
                       style: TextStyle(
-                        fontSize: 34,
-                        fontWeight: FontWeight.bold,
-                      ),
+                          fontSize: 34,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
                     ),
                   ),
                   Container(
@@ -155,10 +155,16 @@ class _LoginScreenState extends State<LoginScreen> {
       height: size.height / 14,
       width: size.width / 1.1,
       child: TextField(
+        style: TextStyle(color: Colors.white),
         controller: cont,
         decoration: InputDecoration(
-          prefixIcon: Icon(icon),
+          fillColor: Colors.white,
+          prefixIcon: Icon(
+            icon,
+            color: Colors.lightBlue[700],
+          ),
           hintText: hintText,
+          iconColor: Colors.white,
           hintStyle: TextStyle(color: Colors.grey),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),

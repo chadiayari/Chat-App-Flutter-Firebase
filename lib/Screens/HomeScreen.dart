@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Screen"),
+        title: Text("Welcome to Chat App"),
         actions: [
           IconButton(icon: Icon(Icons.logout), onPressed: () => logOut(context))
         ],
@@ -102,9 +102,17 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                     height: size.height / 14,
                     width: size.width / 1.15,
                     child: TextField(
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
                       controller: _search,
                       decoration: InputDecoration(
-                        hintText: "Search",
+                        fillColor: Colors.white,
+                        hintText: "Search for users",
+                        hintStyle: TextStyle(
+                          color: Colors.grey,
+                        ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -138,17 +146,20 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                             ),
                           );
                         },
-                        leading: Icon(Icons.account_box, color: Colors.black),
+                        leading: Icon(Icons.account_box, color: Colors.white),
                         title: Text(
                           userMap!['name'],
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                             fontSize: 17,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        subtitle: Text(userMap!['email']),
-                        trailing: Icon(Icons.chat, color: Colors.black),
+                        subtitle: Text(
+                          userMap!['email'],
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        trailing: Icon(Icons.chat, color: Colors.white),
                       )
                     : Container(),
               ],

@@ -153,11 +153,11 @@ class _GroupInfoState extends State<GroupInfo> {
                             width: size.height / 11,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: Colors.grey,
+                              color: Colors.white,
                             ),
                             child: Icon(
                               Icons.group,
-                              color: Colors.white,
+                              color: Colors.black,
                               size: size.width / 10,
                             ),
                           ),
@@ -170,9 +170,9 @@ class _GroupInfoState extends State<GroupInfo> {
                                 widget.groupName,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                  fontSize: size.width / 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                                    fontSize: size.width / 16,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white),
                               ),
                             ),
                           ),
@@ -191,9 +191,9 @@ class _GroupInfoState extends State<GroupInfo> {
                       child: Text(
                         "${membersList.length} Members",
                         style: TextStyle(
-                          fontSize: size.width / 20,
-                          fontWeight: FontWeight.w500,
-                        ),
+                            fontSize: size.width / 20,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white),
                       ),
                     ),
 
@@ -216,13 +216,14 @@ class _GroupInfoState extends State<GroupInfo> {
                             ),
                             leading: Icon(
                               Icons.add,
+                              color: Colors.white,
                             ),
                             title: Text(
                               "Add Members",
                               style: TextStyle(
-                                fontSize: size.width / 22,
-                                fontWeight: FontWeight.w500,
-                              ),
+                                  fontSize: size.width / 22,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white),
                             ),
                           )
                         : SizedBox(),
@@ -235,17 +236,25 @@ class _GroupInfoState extends State<GroupInfo> {
                         itemBuilder: (context, index) {
                           return ListTile(
                             onTap: () => showDialogBox(index),
-                            leading: Icon(Icons.account_circle),
+                            leading: Icon(
+                              Icons.account_circle,
+                              color: Colors.white,
+                            ),
                             title: Text(
                               membersList[index]['name'],
                               style: TextStyle(
-                                fontSize: size.width / 22,
-                                fontWeight: FontWeight.w500,
-                              ),
+                                  fontSize: size.width / 22,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white),
                             ),
-                            subtitle: Text(membersList[index]['email']),
+                            subtitle: Text(
+                              membersList[index]['email'],
+                              style: TextStyle(color: Colors.white),
+                            ),
                             trailing: Text(
-                                membersList[index]['isAdmin'] ? "Admin" : ""),
+                              membersList[index]['isAdmin'] ? "Admin" : "",
+                              style: TextStyle(color: Colors.white),
+                            ),
                           );
                         },
                       ),

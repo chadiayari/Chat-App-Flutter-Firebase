@@ -46,7 +46,7 @@ class _GroupChatHomeScreenState extends State<GroupChatHomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Groups"),
+        title: Text("Current Groups"),
       ),
       body: isLoading
           ? Container(
@@ -67,8 +67,14 @@ class _GroupChatHomeScreenState extends State<GroupChatHomeScreen> {
                       ),
                     ),
                   ),
-                  leading: Icon(Icons.group),
-                  title: Text(groupList[index]['name']),
+                  leading: Icon(
+                    Icons.group,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    groupList[index]['name'],
+                    style: TextStyle(color: Colors.white),
+                  ),
                 );
               },
             ),
