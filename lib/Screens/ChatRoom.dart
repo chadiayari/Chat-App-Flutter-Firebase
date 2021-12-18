@@ -207,10 +207,6 @@ class ChatRoom extends StatelessWidget {
     return map['type'] == "text"
         ? Container(
             width: size.width,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.blueAccent),
-              borderRadius: BorderRadius.circular(10),
-            ),
             alignment: map['sendby'] == _auth.currentUser!.displayName
                 ? Alignment.centerRight
                 : Alignment.centerLeft,

@@ -29,9 +29,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         backgroundColor: Colors.white,
         textColor: Colors.grey,
         fontSize: 16.0);
-
     this.getUsers();
-
     super.initState();
     WidgetsBinding.instance!.addObserver(this);
     setStatus("Online");

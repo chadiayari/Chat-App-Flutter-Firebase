@@ -89,9 +89,11 @@ class _AddMembersINGroupState extends State<AddMembersINGroup> {
                 height: size.height / 14,
                 width: size.width / 1.15,
                 child: TextField(
+                  style: TextStyle(color: Colors.white),
                   controller: _search,
                   decoration: InputDecoration(
-                    hintText: "Search For New Member",
+                    hintText: "Search for New Member",
+                    hintStyle: TextStyle(color: Colors.white),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -116,7 +118,10 @@ class _AddMembersINGroupState extends State<AddMembersINGroup> {
             userMap != null
                 ? ListTile(
                     onTap: onAddMembers,
-                    leading: Icon(Icons.account_box),
+                    leading: Icon(
+                      Icons.account_box,
+                      color: Colors.white,
+                    ),
                     title: Text(
                       userMap!['name'],
                       style: TextStyle(color: Colors.white),

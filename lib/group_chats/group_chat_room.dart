@@ -150,7 +150,7 @@ class GroupChatRoom extends StatelessWidget {
               : Alignment.centerLeft,
           child: Container(
               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 14),
-              margin: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+              margin: EdgeInsets.symmetric(vertical: 15, horizontal: 8),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 color: Colors.blue,
