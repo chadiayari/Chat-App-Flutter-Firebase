@@ -77,6 +77,10 @@ class _CreateGroupState extends State<CreateGroup> {
                 Container(
                   height: size.height / 14,
                   width: size.width,
+                  decoration: BoxDecoration(
+    border: Border.all(color: Colors.blueAccent),
+    borderRadius: BorderRadius.circular(10),
+  ),
                   alignment: Alignment.center,
                   child: Container(
                     height: size.height / 14,
